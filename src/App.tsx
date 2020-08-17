@@ -1,30 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
+
 import './App.css';
 
-function App() {
+interface IProps {
+  framework: string;
+}
 
-  var a = 0;
+interface IState {
+  framework: string;
+}
 
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component<IProps, IState> {
 
+  state = {
+    framework: this.props.framework
+  };
+
+  clickButton = (): void => {
+    this.setState({
+      framework: '999999'
+    });
+  }
+
+  render(): JSX.Element {
+
+    return <div onClick={(): void => { this.clickButton(); }}>{this.state.framework}</div>;
+  }
 }
 
 export default App;
