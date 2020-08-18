@@ -1,31 +1,19 @@
 import React from 'react';
+import { renderRoutes } from 'react-router-config';
+import { HashRouter } from 'react-router-dom';
 
-import './App.css';
 
-interface IProps {
-  framework: string;
-}
+import routes from './routes/index';
 
-interface IState {
-  framework: string;
-}
 
-class App extends React.Component<IProps, IState> {
 
-  state = {
-    framework: this.props.framework
-  };
 
-  clickButton = (): void => {
-    this.setState({
-      framework: '999999'
-    });
-  }
-
-  render(): JSX.Element {
-
-    return <div onClick={(): void => { this.clickButton(); }}>{this.state.framework}</div>;
-  }
-}
+const App = (): any => {
+  return (
+      <HashRouter>
+        {renderRoutes(routes)}
+      </HashRouter>
+  );
+};
 
 export default App;
