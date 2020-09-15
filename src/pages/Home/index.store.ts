@@ -2,8 +2,6 @@
 import { action, observable } from 'mobx';
 
 
-
-
  class HomeStore {
    static clickButton: any;
    static testStr: String;
@@ -18,3 +16,4 @@ import { action, observable } from 'mobx';
 }
 
 export default new HomeStore();
+

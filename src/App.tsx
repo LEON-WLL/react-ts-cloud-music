@@ -1,14 +1,10 @@
 import React from 'react';
 import { renderRoutes } from 'react-router-config';
 import { HashRouter } from 'react-router-dom';
-
-
 import routes from './routes/index';
 
 
-
-
-const App = (): any => {
+const App: React.FC = () => {
   return (
       <HashRouter>
         {renderRoutes(routes)}
